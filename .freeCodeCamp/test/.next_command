@@ -238,3 +238,7 @@ pwd
 cd /project
 cd /workspace/project
 git add .
+git commit -m "Añadiendo base de datos universe.sql y archivos del proyecto"
+git push origin main
+psql --username=freecodecamp --dbname=postgres
+git add .
