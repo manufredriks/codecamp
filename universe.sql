@@ -156,6 +156,23 @@ ALTER SEQUENCE public.moon_moon_id_seq OWNED BY public.moon.moon_id;
 
 
 --
+-- Name: moon_reorder; Type: VIEW; Schema: public; Owner: freecodecamp
+--
+
+CREATE VIEW public.moon_reorder AS
+ SELECT set.moon_id,
+    set.name,
+    set.planet_orbit,
+    set.diameter,
+    set.discovered_year,
+    set.planet_id
+   FROM public.moon set
+  ORDER BY set.moon_id;
+
+
+ALTER TABLE public.moon_reorder OWNER TO freecodecamp;
+
+--
 -- Name: planet; Type: TABLE; Schema: public; Owner: freecodecamp
 --
 
@@ -192,6 +209,23 @@ ALTER TABLE public.planet_planet_id_seq OWNER TO freecodecamp;
 
 ALTER SEQUENCE public.planet_planet_id_seq OWNED BY public.planet.planet_id;
 
+
+--
+-- Name: planet_reorder; Type: VIEW; Schema: public; Owner: freecodecamp
+--
+
+CREATE VIEW public.planet_reorder AS
+ SELECT set.planet_id,
+    set.name,
+    set.age_million_years,
+    set.is_spherical,
+    set.star_orbit,
+    set.star_id
+   FROM public.planet set
+  ORDER BY set.planet_id;
+
+
+ALTER TABLE public.planet_reorder OWNER TO freecodecamp;
 
 --
 -- Name: star; Type: TABLE; Schema: public; Owner: freecodecamp

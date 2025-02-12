@@ -242,3 +242,7 @@ git commit -m "Añadiendo base de datos universe.sql y archivos del proyecto"
 git push origin main
 psql --username=freecodecamp --dbname=postgres
 git add .
+git commit -m "Mensaje describiendo los cambios realizados"
+git push origin main
+pg_dump -cC --inserts -U freecodecamp universe > universe.sql
+git add .
